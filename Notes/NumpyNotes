@@ -1,0 +1,90 @@
+Numpy functions:
+
+import numpy as np
+
+-np.array()
+-np.arange(start, stop, step) : EX: (0,11,2):- 0,2,4,6,8,10
+-np.zeros(num) : returns a vector of num's zeros
+-np.ones(num) : returns a vector of num's one
+-np.linspace(start, stop, num) : EX: (0,10,3):- [ 0.  5. 10.]
+-np.eye(num): Identity matrix EX: num-3, [[1. 0. 0.]
+                                          [0. 1. 0.]
+                                          [0. 0. 1.]]
+-np.random.rand(num1,num2)
+-np.random.randn(num1,num2)
+-np.random.randint(num1,num2,num3,num4) : num3 is size (optional) num4 is the no. of number you want between num1 & num2 (optional)
+-np.random.seed(num) : arbitary num to reproduce a certain num everytime
+-custom.shape: To get the shape of an array
+-custom.reshape(num1,num2): To reshape a custom array in num1 row and num2 col, cannot reshape 25 elements into less than 25 elements
+-customNParray.max(): returns max value in the array
+-customNParray.argmax(): returns max value index location
+-customNParray.min(): returns min value in the array
+-customNParray.argmin(): returns min value index location
+-customNParray.dtype: returns the datatype
+-customNParry.copy()
+-customNParray[row,col]: To get the value at the specified row & col location in the matrix
+-np.sqrt(customNParray)
+-np.sin(customNParray)
+-np.log(customNParray)
+-customNParray.sum(axis:): axis:0 or axis:1 optional parameter to get the total of each row or col
+-customNParray.mean()
+-customNParray.max()
+-customNParray.var()
+-customNParray.std()
+
+Example Code:
+
+import numpy as np
+
+mylist = [1, 2, 3]
+
+print(mylist)
+print(type(mylist))
+
+myArray = np.array(mylist)
+
+print(myArray)
+print(type(myArray))
+
+arrange = np.arange(0, 10, 2)
+print(arrange)
+
+print(np.zeros(shape=(4, 5)))
+
+print(np.ones(shape=(2, 3)))
+
+np.random.seed(101)
+arr = np.random.randint(0, 100, 10)
+print("Values in arr: ", arr)
+arr2 = np.random.randint(0, 100, 10)
+print(arr2)
+print("Max value: ", arr.max())
+print("Index of max value in arr: ", arr.argmax())
+print("Index of min value in arr: ", arr.argmin())
+print("Mean value of arr: ", arr.mean())
+print("Reshape of arr", arr.reshape(5, 2))
+
+# reshape (height,width)
+
+mat = np.arange(0, 100).reshape(10, 10)
+print("New mat: ", mat)
+print("Shape of mat: ", mat.shape)
+
+row = 2
+col = 2
+print(mat[row, col])
+print(mat[:, 2])
+
+matCopy = mat
+print(matCopy)
+
+print(matCopy[0:3, 0:3])
+matCopy[0:3, 0:3] = 0
+print(matCopy[0:3, 0:3])
+print(matCopy)
+
+
+
+
+
+
